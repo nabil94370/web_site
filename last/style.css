@@ -1,0 +1,87 @@
+body{
+  background-image: url(19_dhans11.jpg);
+}
+
+.texte-stage {
+  margin-top: 120px;
+}
+
+.content-2 {
+  margin-top: 95px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 55px;
+  padding: 50px;
+  right: 50px;
+}
+
+.content-2 p {
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 10px;
+}
+
+.titles {
+  font-size: 40px;
+  font-weight: 700;
+}
+.content-3 {
+  margin-top: 150px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 55px;
+  padding: 50px;
+  right: 50px;
+}
+.content-3 p {
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 10px;
+}
+.content-4 p {
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 10px;
+}
+.content-4 {
+  margin-top: 150px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 55px;
+  padding: 50px;
+  right: 50px;
+}
+.image-content {
+
+  margin-top: 150px;
+  border-radius: 50%;
+}
+.galere {
+ margin-top: 250px;
+}
+.content-5{
+  margin-top: 150px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 55px;
+  padding: 50px;
+  right: 50px;
+}
+.content-5 p {
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.texte-siu{
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 10px;
+}

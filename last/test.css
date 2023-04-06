@@ -1,0 +1,116 @@
+/* Style général */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+  
+  /* Style pour le header */
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Style pour les sections */
+  
+  section {
+    padding: 50px 20px;
+  }
+  
+  section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  section ul {
+    list-style-type: disc;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+  }
+  
+  section ul li {
+    margin-bottom: 10px;
+  }
+  
+  section ul li:last-child {
+    margin-bottom: 0;
+  }
+  
+  section ul li img {
+    float: left;
+    margin-right: 20px;
+    max-width: 200px;
+    max-height: 150px;
+  }
+  
+  section ul li h3 {
+    font-size: 24px;
+  }
+  
+  /* Style pour le formulaire de contact */
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  form input,
+  form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  
