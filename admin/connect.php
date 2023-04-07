@@ -1,8 +1,8 @@
 <?php
 
-$servername = "mysql-martinez94.alwaysdata.net";
-$username = "307660_root";
-$password = "S&-k2C@TfT4B8#s";
+$servername = "localhost";
+$username = "root";
+$password = "root";
 $dbname = "martinez94_php_crud_app";
 
 // Create connection

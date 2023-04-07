@@ -3,18 +3,17 @@ require_once ('connect.php');
 $message = '';
 
 if (!empty($_POST)) {
+    $date = ($_POST['dates']);
+    $date_unpose = ($_POST['date_unpose']);
+    $porte_numero = $_POST['Numéro'];
     $nom = ($_POST['nom']);
     $prenom = ($_POST['prenom']);
-    $date = ($_POST['dates']);
-    $gender = $_POST['gender'];
-    $types = $_POST['types'];
-    $photo = $_FILES['photo']['name'];
+    $Agence = $_POST['Agence'];
+    $Etage = $_POST['Etage'];
+    
+       
 
-    $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/'; 
-    $target_file = $target_dir . basename($_FILES["photo"]["name"]);
-    move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
-
-    $CreateSql = "INSERT INTO `etudiant` (first_name, last_name, dates, gender, types, photo) VALUES ('$nom', '$prenom', '$date', '$gender', '$types', '$photo')";
+    $CreateSql = "INSERT INTO `etudiant` (first_name,last_name,dates,dates_unpose,porte_numero,agences,Etage) VALUES ('$nom', '$prenom','$date','$date_unpose','$porte_numero','$Agence','$Etage')";
     $res = mysqli_query($conn, $CreateSql) or die(mysqli_error($conn));
     if ($res) {
         $message = "Insertion réussie avec succès";
@@ -42,8 +41,30 @@ include 'nav-bar2.php';
 
         
             
-            <form action="" method="POST" enctype="multipart/form-data" id="donnation" class="form-horizontal col-md-6 pt-4 fade-in">
+            <form action="admin.php" method="POST" enctype="multipart/form-data" id="donnation" class="form-horizontal col-md-6 pt-4 fade-in">
     <h2>Insérer vos données</h2>
+
+
+    <div class="form-group">
+        <label for="input1" class="col-sm-2 control-label">Date De Pose</label>
+        <div class="col-sm-10">
+            <input type="date" name="dates" placeholder="Date De Pose" class="form-control" id="input1">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input1" class="col-sm-2 control-label">Date Dépose</label>
+        <div class="col-sm-10">
+            <input type="date" name="date_unpose" placeholder="Date Dépose" class="form-control" id="input1">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input1" class="col-sm-2 control-label">Numéro de porte</label>
+        <div class="col-sm-10">
+            <input type="text" name="Numéro" placeholder="Numéro de porte" class="form-control" id="input1">
+        </div>
+    </div>
 
     <div class="form-group">
         <label for="input1" class="col-sm-2 control-label">Nom</label>
@@ -60,40 +81,16 @@ include 'nav-bar2.php';
     </div>
 
     <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">Date</label>
+        <label for="input1" class="col-sm-2 control-label">Agence</label>
         <div class="col-sm-10">
-            <input type="date" name="dates" placeholder="e-mail" class="form-control" id="input1">
+            <input type="text" name="Agence" placeholder="Agence" class="form-control" id="input1">
         </div>
     </div>
 
     <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">Genre</label>
+        <label for="input1" class="col-sm-2 control-label">Etage</label>
         <div class="col-sm-10">
-            <label>
-                <input type="radio" name="gender" id="optionsRadios" value="h" checked>
-                Homme
-            </label>
-            <label>
-                <input type="radio" name="gender" id="optionsRadios" value="f" checked>
-                Femme
-            </label>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">types</label>
-        <div class="col-sm-10">
-            <select name="types" class="form-control" id="selecte">
-                <option>Type de porte</option>
-                <option>porte</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">Photo</label>
-        <div class="col-sm-10">
-            <input type="file" name="photo" class="form-control" id="photos">
+            <input type="text" name="Etage" placeholder="Adresse d'installation" class="form-control" id="input1">
         </div>
     </div>
 

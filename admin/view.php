@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>crud app php</title>
+	<title>page admin</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style7.css">
@@ -30,33 +30,34 @@
 			<thead>
 				<tr>
 					<th>id</th>
+					<th>Date de Pose</th>
+					<th>Date Dépose</th>
+					<th>Numéro de porte</th>
 					<th>Nom complet</th>
-					<th>Date</th>
-					<th>types</th>
-					<th>genre</th>
+					<th>Agence</th>
+					<th>Etage</th>
 					<th>Actions</th>
-					<th>photo</th>
+					
 				</tr>
 			</thead>
 			<tbody>
 				<?php while ($r = mysqli_fetch_assoc($res)) {
 					$id = $r['id'];
-					$nom_complet = $r['first_name'] ." ". $r['last_name'];
 					$date = $r['dates'];
-					$type = $r['types'];
-					$genre = $r['gender'];
-					$photo = $r['photo'];
+					$date_unpose = $r['dates_unpose'];
+					$porte_numero = $r['porte_numero'];
+					$nom_complet = $r['first_name'] ." ". $r['last_name'];
+					$Agence = $r['agences'];
+					$Etage = $r['Etage'];
 				?>
 				<tr>
 					<th scope="row"><?php echo $id; ?></th>
-					<td><?php echo $nom_complet; ?></td>
 					<td><?php echo $date; ?></td>
-					<td><?php echo $type; ?></td>					
-					<td><?php echo $genre; ?></td>
-					
-					
-					
-					
+					<td><?php echo $date_unpose; ?></td>
+					<td><?php echo $porte_numero; ?></td>
+					<td><?php echo $nom_complet; ?></td>
+					<td><?php echo $Agence; ?></td>
+					<td><?php echo $Etage; ?></td>								
 					<td>
 						<a href="update.php?id=<?php echo $id; ?>" class="m-2">
 							<img src="uptade.png" title="modifié ligne" width="85px" height="60px">
@@ -82,9 +83,8 @@
 						 	</div>
 						 </div>
 					</td>
-					<td><img src="/uploads/<?php echo $photo; ?>" alt="Photo de l'étudiant" width="150px" height="150px"></td>
 				</tr>
-				<?php } ?>
+				<?php }?>
 			</tbody>
 		</table>
 
