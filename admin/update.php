@@ -66,7 +66,7 @@ if (isset($_POST) & !empty($_POST)) {
     <div class="form-group">
         <label for="input1" class="col-sm-2 control-label"><strong>Date Dépose</strong></label>
         <div class="col-sm-10">
-            <input type="date" name="date_unpose" placeholder="Date Dépose" class="form-control" id="input1" value="<?php echo $r['date_unpose'] ?>">
+            <input type="date" name="date_unpose" placeholder="Date Dépose" class="form-control" id="input1" value="<?php echo $r['dates_unpose'] ?>">
         </div>
     </div>
 	<br>				
