@@ -29,7 +29,8 @@ if (!empty($_POST)) {
     <title>page_admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style7.css">
+    <link rel="stylesheet" href="dejllal_modif.css">
 </head>
 <body>
 <?php
@@ -46,54 +47,54 @@ include 'nav-bar2.php';
 
 
     <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">Date De Pose</label>
+        <label for="input1" class="col-sm-2 control-label"><strong>Date de Pose</strong></label>
         <div class="col-sm-10">
             <input type="date" name="dates" placeholder="Date De Pose" class="form-control" id="input1">
         </div>
     </div>
-
+    <br>
     <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">Date Dépose</label>
+        <label for="input1" class="col-sm-2 control-label"><strong>Date Dépose</strong></label>
         <div class="col-sm-10">
             <input type="date" name="date_unpose" placeholder="Date Dépose" class="form-control" id="input1">
         </div>
     </div>
-
-    <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">Numéro de porte</label>
+    <br>
+    <div class="form-group"> <!-- test -->
+        <label for="input1" class="col-sm-2 control-label" id="long_texte_djellal"><strong>Numéro de Porte</strong></label>
         <div class="col-sm-10">
             <input type="text" name="Numéro" placeholder="Numéro de porte" class="form-control" id="input1">
         </div>
     </div>
-
+    <br>
     <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">Nom</label>
+        <label for="input1" class="col-sm-2 control-label"><strong>Nom</strong></label>
         <div class="col-sm-10">
             <input type="text" name="nom" placeholder="Nom" class="form-control" id="input1">
         </div>
     </div>
-
+    <br>
     <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">Prenom</label>
+        <label for="input1" class="col-sm-2 control-label"><strong>Prenom</strong></label>
         <div class="col-sm-10">
             <input type="text" name="prenom" placeholder="prenom" class="form-control" id="input1">
         </div>
     </div>
-
+    <br>
     <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">Agence</label>
+        <label for="input1" class="col-sm-2 control-label"><strong>Agence</strong></label>
         <div class="col-sm-10">
             <input type="text" name="Agence" placeholder="Agence" class="form-control" id="input1">
         </div>
     </div>
-
+    <br>
     <div class="form-group">
-        <label for="input1" class="col-sm-2 control-label">Etage</label>
+        <label for="input1" class="col-sm-2 control-label"><strong>Etage</strong></label>
         <div class="col-sm-10">
             <input type="text" name="Etage" placeholder="Adresse d'installation" class="form-control" id="input1">
         </div>
     </div>
-
+    <br>
     <div class="pt-4">
         <input type="submit" value="Save & Submit" class="btn btn-primary m-3">
         <a href="view.php">

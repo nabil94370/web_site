@@ -12,11 +12,12 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style7.css">
+	<link rel="stylesheet" href="dejllal_modif.css">
 </head>
 <body>
 
 <div class="container">
-	<div class="row pt-4">
+	<div class="row pt-4" id="marseille">
 		<h2>Données Clients</h2>
 		<a href="admin.php">
 			<button class="btn btn-primary" type="">
@@ -25,7 +26,7 @@
 		</a>
 	</div>
 
-	<div class="table-responsive">
+	<div class="table-responsive" id="update_1">
 		<table class="table table-striped mt-3">
 			<thead>
 				<tr>
@@ -50,7 +51,7 @@
 					$Agence = $r['agences'];
 					$Etage = $r['Etage'];
 				?>
-				<tr>
+					<tr>
 					<th scope="row"><?php echo $id; ?></th>
 					<td><?php echo $date; ?></td>
 					<td><?php echo $date_unpose; ?></td>
@@ -83,7 +84,9 @@
 						 	</div>
 						 </div>
 					</td>
-				</tr>
+				 </tr>
+				
+				
 				<?php }?>
 			</tbody>
 		</table>
