@@ -36,6 +36,7 @@
 					<th>Numéro de porte</th>
 					<th>Nom complet</th>
 					<th>Agence</th>
+					<th>Adresse</th>
 					<th>Etage</th>
 					<th>Actions</th>
 					
@@ -49,6 +50,7 @@
 					$porte_numero = $r['porte_numero'];
 					$nom_complet = $r['first_name'] ." ". $r['last_name'];
 					$Agence = $r['agences'];
+					$Adresse = $r['adresses'];
 					$Etage = $r['Etage'];
 				?>
 					<tr>
@@ -58,6 +60,7 @@
 					<td><?php echo $porte_numero; ?></td>
 					<td><?php echo $nom_complet; ?></td>
 					<td><?php echo $Agence; ?></td>
+					<td><?php echo $Adresse; ?></td>
 					<td><?php echo $Etage; ?></td>								
 					<td>
 						<a href="update.php?id=<?php echo $id; ?>" class="m-2">

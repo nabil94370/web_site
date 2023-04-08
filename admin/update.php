@@ -17,9 +17,10 @@ if (isset($_POST) & !empty($_POST)) {
     $nom = ($_POST['nom']);
     $prenom = ($_POST['prenom']);
     $Agence = $_POST['Agence'];
+    $Adresse = $_POST['adressess'];
     $Etage = $_POST['Etage'];
 
-    $UpdateSql = "UPDATE `etudiant` SET dates='$date',	dates_unpose='$date_unpose', porte_numero='$porte_numero', last_name='$prenom', first_name='$nom', agences='$Agence', Etage='$Etage'  WHERE id=$id ";
+    $UpdateSql = "UPDATE `etudiant` SET dates='$date',	dates_unpose='$date_unpose', porte_numero='$porte_numero', last_name='$prenom', first_name='$nom', agences='$Agence', $Adress='adresses' , Etage='$Etage'  WHERE id=$id ";
 
     $res = mysqli_query($conn, $UpdateSql);
     if ($res) {
@@ -95,6 +96,13 @@ if (isset($_POST) & !empty($_POST)) {
         <label for="input1" class="col-sm-2 control-label"><strong>Agence</strong></label>
         <div class="col-sm-10">
             <input type="text" name="Agence" placeholder="Agence" class="form-control" id="input1" value="<?php echo $r['agences'] ?>">
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="input1" class="col-sm-2 control-label"><strong>Adresse</strong></label>
+        <div class="col-sm-10">
+            <input type="text" name="adressess" placeholder="Agence" class="form-control" id="input1" value="<?php echo $r['adresses'] ?>">
         </div>
     </div>
 	<br>				

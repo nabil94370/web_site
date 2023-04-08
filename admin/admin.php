@@ -9,11 +9,13 @@ if (!empty($_POST)) {
     $nom = ($_POST['nom']);
     $prenom = ($_POST['prenom']);
     $Agence = $_POST['Agence'];
+    $Adresse = $_POST['adressess'];
     $Etage = $_POST['Etage'];
+    
     
        
 
-    $CreateSql = "INSERT INTO `etudiant` (first_name,last_name,dates,dates_unpose,porte_numero,agences,Etage) VALUES ('$nom', '$prenom','$date','$date_unpose','$porte_numero','$Agence','$Etage')";
+    $CreateSql = "INSERT INTO `etudiant` (first_name,last_name,dates,dates_unpose,porte_numero,agences,adresses,Etage) VALUES ('$nom', '$prenom','$date','$date_unpose','$porte_numero','$Agence','$Adresse','$Etage')";
     $res = mysqli_query($conn, $CreateSql) or die(mysqli_error($conn));
     if ($res) {
         $message = "Insertion réussie avec succès";
@@ -85,6 +87,13 @@ include 'nav-bar2.php';
         <label for="input1" class="col-sm-2 control-label"><strong>Agence</strong></label>
         <div class="col-sm-10">
             <input type="text" name="Agence" placeholder="Agence" class="form-control" id="input1">
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="input1" class="col-sm-2 control-label"><strong>Adresse</strong></label>
+        <div class="col-sm-10">
+            <input type="text" name="adressess" placeholder="Agence" class="form-control" id="input1">
         </div>
     </div>
     <br>
