@@ -20,7 +20,7 @@ if (isset($_POST) & !empty($_POST)) {
     $Adresse = $_POST['adressess'];
     $Etage = $_POST['Etage'];
 
-    $UpdateSql = "UPDATE `etudiant` SET dates='$date',	dates_unpose='$date_unpose', porte_numero='$porte_numero', last_name='$prenom', first_name='$nom', agences='$Agence', $Adress='adresses' , Etage='$Etage'  WHERE id=$id ";
+    $UpdateSql = "UPDATE `etudiant` SET dates='$date',	dates_unpose='$date_unpose', porte_numero='$porte_numero', last_name='$prenom', first_name='$nom', agences='$Agence', adresses='$Adresse' , Etage='$Etage'  WHERE id=$id ";
 
     $res = mysqli_query($conn, $UpdateSql);
     if ($res) {
