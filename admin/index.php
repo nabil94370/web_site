@@ -14,9 +14,12 @@
      	<input type="text" name="uname" placeholder="Nom d'utilisateur"><br>
 
      	<label>Mot de passe</label>
-     	<input type="password" name="password" placeholder="Mot De Passe"><br>
+     	<input type="password" name="passwords" placeholder="Mot De Passe"><br>
 
      	<input type="submit" name="submit" value="Envoyé">
+		 <a href="inscription.php">
+			<button type="button">Inscription</button>
+		</a>
      </form>
 </body>
 </html>
