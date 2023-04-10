@@ -16,7 +16,7 @@
      	<label>Mot de passe</label>
      	<input type="password" name="passwords" placeholder="Mot De Passe"><br>
 
-     	<input type="submit" name="submit" value="Envoyé">
+     	<input type="submit" name="submit" value="Login">
 		 <a href="inscription.php">
 			<button type="button">Inscription</button>
 		</a>

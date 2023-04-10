@@ -9,9 +9,9 @@ $Mot_de_passe = $_POST['password'];
 $CreateSql = "INSERT INTO `users` (user_name,passwords) VALUES ('$nom_utilisateur', '$Mot_de_passe')";
 $res = mysqli_query($conn, $CreateSql) or die(mysqli_error($conn));
     if ($res) {
-        $message = "Insertion réussie avec succès";
+        $message = "Création utilisateur $nom_utilisateur OK";
     } else {
-        $message = "Erreur d'insertion à la base";
+        $message = "Erreur d'inscription";
     }
 }
 ?>
@@ -37,8 +37,7 @@ $res = mysqli_query($conn, $CreateSql) or die(mysqli_error($conn));
                 login
             </button>
         </a>
-     </form>
-     <?php if (isset($message)) { ?>
+        <?php if (isset($message)) { ?>
             <div class="alert alert-success" role="alert">
                 <?php echo $message; ?>
             </div><?php } ?>
@@ -46,6 +45,8 @@ $res = mysqli_query($conn, $CreateSql) or die(mysqli_error($conn));
             <div class="alert alert-danger" role="alert">
                 <?php echo $erreur; ?>
             </div><?php } ?>
+     </form>
+     
 
 
 </body>
