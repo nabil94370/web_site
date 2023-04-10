@@ -32,6 +32,11 @@ $res = mysqli_query($conn, $CreateSql) or die(mysqli_error($conn));
      	<input type="password" name="password" placeholder="Mot De Passe"><br>
 
      	<input type="submit" name="submit" value="Inscription">
+         <a href="index.php">
+            <button class="btn btn-success m-3" type="button">
+                login
+            </button>
+        </a>
      </form>
      <?php if (isset($message)) { ?>
             <div class="alert alert-success" role="alert">
