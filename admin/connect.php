@@ -1,9 +1,9 @@
 <?php
 
-$servername = "mysql-martinez94.alwaysdata.net";
-$username = "307660_root";
-$password = "S&-k2C@TfT4B8#s";
-$dbname = "martinez94_php_crud_app";
+$servername = "mysql-nabilabs.alwaysdata.net";
+$username = "nabilabs_nabil";
+$password = "BsjG7Rm#p8hE";
+$dbname = "nabilabs_root";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
