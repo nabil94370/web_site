@@ -1,8 +1,8 @@
 <?php
 
-$servername = "mysql-nabilabs.alwaysdata.net";
-$username = "nabilabs_nabil";
-$password = "BsjG7Rm#p8hE";
+$servername = "localhost";
+$username = "root";
+$password = "root";
 $dbname = "nabilabs_login";
 
 // Create connection
