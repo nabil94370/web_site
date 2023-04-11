@@ -21,7 +21,7 @@ if (!empty($_POST)) {
             $CreateSql = "INSERT INTO `users` (user_name,passwords) VALUES ('$nom_utilisateur', '$Mot_de_passe')";
             $res = mysqli_query($conn, $CreateSql) or die(mysqli_error($conn));
             if ($res) {
-                $message = "Création utilisateur $nom_utilisateur OK";
+                $message = "<span style='color:green;font-weight:bold; margin-left: 10px;'>Création utilisateur $nom_utilisateur OK</span>";
             } else {
                 $erreur = "<span style='color:red;font-weight:bold;'>Erreur d'inscription</span>";
             }
@@ -38,6 +38,7 @@ if (!empty($_POST)) {
 <head>
     <title>INSCRIPTION </title>
     <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="stylesheet" href="css2.css">
 </head>
 <body>
      <form action="" method="post" class="all_form">
@@ -49,11 +50,6 @@ if (!empty($_POST)) {
         <input type="password" name="password" placeholder="Mot De Passe"><br>
 
         <input type="submit" name="submit" value="Inscription">
-        <a href="index.php">
-            <button class="btn btn-success m-3" type="button">
-                login
-            </button>
-        </a>
         <?php if (isset($message)) { ?>
             <div class="alert alert-success" role="alert">
                 <?php echo $message; ?>
@@ -64,6 +60,11 @@ if (!empty($_POST)) {
                 <?php echo $erreur; ?>
             </div>
         <?php } ?>
+        <a href="index.php" id="porte_oi">
+            <button class="btn btn-success m-3" type="button" >
+                login
+            </button>
+        </a>
      </form>
 </body>
 </html>
