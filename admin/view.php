@@ -12,7 +12,12 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style7.css">
-	<link rel="stylesheet" href="dejllal_modif_2.css">
+	<link rel="stylesheet" href="fkdjsqfdsq.css">
+	<style>
+		body{
+			background-color: white;
+		}
+	</style>
 </head>
 <body>
 
@@ -29,7 +34,7 @@
 	<div class="table-responsive" id="update_1">
 		<table class="table table-striped mt-3">
 			<thead>
-				<tr id="taile_ligne">
+				
 					<th>id</th>
 					<th>Date de Pose</th>
 					<th>Date Dépose</th>
@@ -40,7 +45,7 @@
 					<th>Etage</th>
 					<th>Actions</th>
 					
-				</tr>
+				
 			</thead>
 			<tbody>
 				<?php while ($r = mysqli_fetch_assoc($res)) {
