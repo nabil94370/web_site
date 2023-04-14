@@ -1,0 +1,33 @@
+#update_1 {
+    width: 135%;
+    margin-left: -250px;
+    height: 100%;
+  }
+#texte_djellal{
+    width: 180px;
+}
+#marseille {
+    margin-left: -22%;
+  }
+  .navbar-nav {
+    margin-right: 1550px;
+  }
+  #salut_rp{
+    margin-right: 1890px;
+  }
+  #anim_update{
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+#long_texte_djellal{
+    width: 155px;
+}
+  

@@ -31,7 +31,7 @@ if (isset($_POST['uname']) && isset($_POST['passwords'])) {
             	$_SESSION['user_name'] = $row['user_name'];
             	$_SESSION['name'] = $row['name'];
             	$_SESSION['id'] = $row['id'];
-            	header("Location: view.php");
+            	header("Location: ovh.php");
 		        exit();
             }else{
 				header("Location: index.php?error=Nom d'utilisateur ou Mot de passe incorrect");
