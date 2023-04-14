@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="admin_real.css">
+    <link rel="stylesheet" href="adminnncss.css">
     <script src="style.js" defer></script>
     <title>Document</title>
 
