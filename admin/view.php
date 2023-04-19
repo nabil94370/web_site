@@ -12,10 +12,16 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style7.css">
-	<link rel="stylesheet" href="fkdjsqfdsq.css">
+	<link rel="stylesheet" href="siuji.css">
+	<link rel="stylesheet" href="ovh6.css">
 	<style>
+        #titre_ovh {
+			
+            color: #004DFF;
+        }
 		body{
 			background-color: white;
+			text-align: center;
 		}
 		@media screen and (max-width: 768px) {
 		table,
@@ -50,6 +56,24 @@
 	</style>
 </head>
 <body>
+
+<nav class="sidebar-navigation" id="ovhba">
+  <ul>
+    <li id="admin-view" style="font-size: 20px;">
+      <i class="fa fa-hdd-o"></i>Admin View
+    </li>
+    <a href="admin.php" id="texte_admine" style="font-size: 20px;">
+      <li id="admin2-view">
+        <i class="fa fa-hdd-o"></i>Entré donnée
+      </li>
+    </a>
+    <a href="../index.html" style="font-size: 20px;">
+      <li id="admin3-view">
+        <i class="fa fa-hdd-o"></i>Home
+      </li>
+    </a>
+  </ul>
+</nav>
 
 <div class="container">
 	<div class="row pt-4" id="marseille">
@@ -130,6 +154,12 @@
 
 
 	</div>
+
+	<script>
+    document.getElementById("admin-view").addEventListener("click", function() {
+        window.location.href = "view.php";
+    });
+	</script>
 
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
