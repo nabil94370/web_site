@@ -85,7 +85,7 @@
   <!-- client section -->
   <div class="containere">
     <h1>Formulaire de contact</h1>
-    <form action="envoie-d'email.php" method="post">
+    <form action="envoie_demail.php" method="post">
       <label for="fname">Nom & prénom</label>
       <input type="text" id="fname" name="nom" placeholder="Votre nom et prénom">
 
@@ -111,77 +111,75 @@
   <!-- info section -->
   <section class="info_section ">
 
-    <div class="container">
-      <div class="contact_nav">
-        <a href="">
-          <i class="fa fa-phone" aria-hidden="true"></i>
-          <span>
-            Call : +33 06 37 43 53 91
-          </span>
-        </a>
-        <a href="mail.php">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-          <span>
-            Email : nblabbes@gmail.com
-          </span>
-        </a>
-        <a href="https://www.google.com/maps/place/Mairie+de+Sucy-en-Brie/@48.7708729,2.5237451,15z/data=!4m6!3m5!1s0x47e60bf65ba9a17d:0xd3eb0fad016c8fe4!8m2!3d48.7708729!4d2.5237451!16s%2Fg%2F1td4tl2b">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          <span>
-            Location
-          </span>
-        </a>
-      </div>
+<div class="container">
+  <div class="contact_nav">
+    <a href="">
+      <i class="fa fa-phone" aria-hidden="true"></i>
+      <span>
+        Call : +33 06 23 16 07 52
+      </span>
+    </a>
+    <a href="mail.php">
+      <i class="fa fa-envelope" aria-hidden="true"></i>
+      <span>
+        Email : sos.infos@gmail.com
+      </span>
+    </a>
+    <a href="https://www.google.com/maps/place/15+Rue+Mathilde,+91000+%C3%89vry-Courcouronnes/data=!4m2!3m1!1s0x47e5e098dcefefb9:0xda22a7f9d0354484?sa=X&ved=2ahUKEwjaxKargc3-AhWvUaQEHZXrCesQ8gF6BAgSEAI">
+      <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <span>
+        Location
+      </span>
+    </a>
+  </div>
 
-      <div class="info_top ">
-        <div class="row info_main_row">
-          <div class=" col-md-4 col-lg-4 ">
-            <div class="info_about">
-              <h4>
-                À PROPOS DE NOUS
-              </h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, vitae. Dolorem incidunt consectetur, recusandae enim officiis mollitia modi consequatur ab non animi provident quis asperiores eius omnis suscipit maiores perferendis?
-              </p>
-            </div>
+  <div class="info_top ">
+    <div class="row info_main_row">
+      <div class=" col-md-4 col-lg-4 ">
+        <div class="info_about">
+          <h4>
+            À PROPOS DE NOUS              
+          </h4>
+          <p>
+          Notre entreprise fabrique et vend des portes blindées de haute qualité pour les maisons, appartements, bureaux et bâtiments publics. Avec X années d'expérience, nous nous engageons à offrir des produits fiables, résistants et esthétiquement agréables. Nous utilisons les meilleurs matériaux et les dernières technologies pour une protection maximale contre les cambriolages, les intrusions et les incendies. Nos portes sont sur mesure et testées rigoureusement pour garantir leur fiabilité et leur durabilité.          </p>
+        </div>
+      </div>
+      <div class=" col-md-4 col-lg-3 mx-auto">
+        <div class="info_links">
+          <h4>
+            LIENS RAPIDES
+          </h4>
+          <div class="info_links_menu">
+            <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="" href="about.html"> À propos</a>
+            <a class="" href="property.html">À propos</a>
+            <a class="" href="why.html">Pourquoi nous</a>
+            <a class="" href="testimonial.html">Témoignage</a>
           </div>
-          <div class=" col-md-4 col-lg-3 mx-auto">
-            <div class="info_links">
-              <h4>
-                LIENS RAPIDES
-              </h4>
-              <div class="info_links_menu">
-                <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                <a class="" href="about.html"> À propos</a>
-                <a class="" href="property.html">Propriété</a>
-                <a class="" href="why.html">Pourquoi nous</a>
-                <a class="" href="testimonial.html">Témoignage</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="info_form">
-              </form>
-              <div class="social_box">
-                <a href="">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="info_form">
+          <div class="social_box">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
+</section>
   <!-- end info_section -->
 
 
