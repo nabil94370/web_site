@@ -2,7 +2,7 @@
 session_start(); 
 include "db_conn.php";
 
-if (isset($_POST['uname']) && isset($_POST['passwords'])) {
+if (isset($_POST['uname']) && isset($_POST['password'])) {
 
 	function validate($data){
        $data = trim($data);
@@ -12,7 +12,7 @@ if (isset($_POST['uname']) && isset($_POST['passwords'])) {
 	}
 
 	$uname = validate($_POST['uname']);
-	$pass = validate($_POST['passwords']);
+	$pass = validate($_POST['password']);
 
 	if (empty($uname)) {
 		header("Location: index.php?error=Nom d'utilisateur obligatoire");
@@ -21,17 +21,17 @@ if (isset($_POST['uname']) && isset($_POST['passwords'])) {
         header("Location: index.php?error=Mot de passe obligatoire");
 	    exit();
 	}else{
-		$sql = "SELECT * FROM users WHERE user_name='$uname' AND passwords='$pass'";
+		$sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
 
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) === 1) {
 			$row = mysqli_fetch_assoc($result);
-            if ($row['user_name'] === $uname && $row['passwords'] === $pass) {
+            if ($row['user_name'] === $uname && $row['password'] === $pass) {
             	$_SESSION['user_name'] = $row['user_name'];
             	$_SESSION['name'] = $row['name'];
             	$_SESSION['id'] = $row['id'];
-            	header("Location: ovh.php");
+            	header("Location: view.php");
 		        exit();
             }else{
 				header("Location: index.php?error=Nom d'utilisateur ou Mot de passe incorrect");

@@ -1,4 +1,13 @@
 <?php
+	session_start();
+
+	// Vérifier si la session utilisateur n'est pas définie ou si l'utilisateur n'a pas le grade administrateur
+	if (!isset($_SESSION["user_id"]) || ($_SESSION["user_id"] && $_SESSION["user_grade"] !== 1)) {
+		// Rediriger vers la page de connexion
+		header("Location: /connexion.php");
+		exit();
+	}
+
 	require_once ('connect.php');
 	$ReadSql = "SELECT * FROM `etudiant` ";
 	$res = mysqli_query($conn, $ReadSql);
@@ -8,43 +17,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>page admin</title>
+	<title>crud app php</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style7.css">
-	<link rel="stylesheet" href="fkdjsqfdsq.css">
-	<link rel="stylesheet" href="ovh6.css">
-	<style>
-		body{
-			background-color: white;
-		}
-	</style>
 </head>
 <body>
-<nav class="sidebar-navigation" id="ovhba">
-  <ul>
-    <li id="admin-view" style="font-size: 20px;">
-      <i class="fa fa-hdd-o">Admin View</i>
-    </li>
-    <a href="admin.php" id="texte_admine" style="font-size: 20px;">
-      <li id="admin2-view">
-        <i class="fa fa-hdd-o">Entré donnée</i>
-      </li>
-    </a>
-    <a href="../index.html" style="font-size: 20px;">
-      <li id="admin3-view">
-        <i class="fa fa-hdd-o">Home</i>
-      </li>
-    </a>
-	<a href="ovh.php" style="font-size: 20px;">
-      <li id="admin3-view">
-        <i class="fa fa-hdd-o">Acceuil</i>
-      </li>
-    </a>
-  </ul>
-</nav>
+
 <div class="container">
-	<div class="row pt-4" id="marseille">
+	<div class="row pt-4">
 		<h2>Données Clients</h2>
 		<a href="admin.php">
 			<button class="btn btn-primary" type="">
@@ -52,43 +33,47 @@
 			</button>
 		</a>
 	</div>
-
-	<div class="table-responsive" id="update_1">
+	<div class="navbar">
+    <ul>
+        <li><a href="logout.php">Déconnexion</a></li>
+    </ul>
+</div>
+	<div class="table-responsive">
 		<table class="table table-striped mt-3">
 			<thead>
-				<tr id="taile_ligne">
+				<tr>
 					<th>id</th>
-					<th>Date de Pose</th>
-					<th>Date Dépose</th>
-					<th>Numéro de porte</th>
 					<th>Nom complet</th>
+					<th>Date De Pose</th>
+					<th>Date De dépose</th>
+					<th>Numéro de portes</th>
 					<th>Agence</th>
-					<th>Adresse</th>
 					<th>Etage</th>
 					<th>Actions</th>
-					
 				</tr>
 			</thead>
 			<tbody>
 				<?php while ($r = mysqli_fetch_assoc($res)) {
-					$id = $r['id'];
-					$date = $r['dates'];
-					$date_unpose = $r['dates_unpose'];
-					$porte_numero = $r['porte_numero'];
-					$nom_complet = $r['first_name'] ." ". $r['last_name'];
-					$Agence = $r['agences'];
-					$Adresse = $r['adresses'];
-					$Etage = $r['Etage'];
-				?>
-					<tr>
+                    $id = $r['id'];
+                    $nom_complet = $r['first_name'] . " " . $r['last_name'];
+                    $date_pose = $r['dates'];
+                    $date_depose = $r['dates_unpose'];
+                    $porte_numero = $r['porte_numero'];
+                    $agence = $r['agences'];
+                    $etage = $r['Etage'];
+                ?>
+				<tr>
 					<th scope="row"><?php echo $id; ?></th>
-					<td><?php echo $date; ?></td>
-					<td><?php echo $date_unpose; ?></td>
-					<td><?php echo $porte_numero; ?></td>
-					<td><?php echo $nom_complet; ?></td>
-					<td><?php echo $Agence; ?></td>
-					<td><?php echo $Adresse; ?></td>
-					<td><?php echo $Etage; ?></td>								
+                    <td><?php echo $nom_complet; ?></td>
+                    <td><?php echo $date_pose; ?></td>
+                    <td><?php echo $date_depose; ?></td>
+                    <td><?php echo $porte_numero; ?></td>
+                    <td><?php echo $agence; ?></td>
+                    <td><?php echo $etage; ?></td>
+					
+					
+					
+					
 					<td>
 						<a href="update.php?id=<?php echo $id; ?>" class="m-2">
 							<img src="uptade.png" title="modifié ligne" width="85px" height="60px">
@@ -114,10 +99,9 @@
 						 	</div>
 						 </div>
 					</td>
-				 </tr>
-				
-				
-				<?php }?>
+					
+				</tr>
+				<?php } ?>
 			</tbody>
 		</table>
 
