@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flux RSS</title>
+</head>
+<body>
+    <h1>Mon Flux RSS</h1>
+    <div id="rss-feed"></div>
+
+    <script>
+        // Fonction pour charger le flux RSS
+        function loadRSS() {
+    console.log("Chargement du flux RSS en cours...");
+    const rssContainer = document.getElementById("rss-feed");
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log("Flux RSS chargé avec succès !");
+                parseRSS(xhr.responseXML);
+            } else {
+                console.error("Erreur lors du chargement du flux RSS. Statut : " + xhr.status);
+            }
+        }
+    };
+    xhr.open("GET", "file:///C:/MAMP/htdocs/flux/flux.xml", true);
+    xhr.send();
+}
+
+
+        // Fonction pour parcourir et afficher le contenu du flux RSS
+        function parseRSS(xml) {
+            const items = xml.querySelectorAll("item");
+            const rssContainer = document.getElementById("rss-feed");
+            let html = "<ul>";
+            items.forEach(function (item) {
+                const title = item.querySelector("title").textContent;
+                const link = item.querySelector("link").textContent;
+                const description = item.querySelector("description").textContent;
+                html += `<li><a href="${link}" target="_blank">${title}</a><p>${description}</p></li>`;
+            });
+            html += "</ul>";
+            rssContainer.innerHTML = html;
+        }
+
+        // Charger le flux RSS au chargement de la page
+        window.onload = loadRSS;
+    </script>
+</body>
+</html>

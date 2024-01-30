@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="admin_real.css">
+    <link rel="stylesheet" href="adminn.css">
     <script src="style.js" defer></script>
     <title>Document</title>
 
@@ -46,7 +46,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ">
               <li class="nav-item ">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.html"> À propos</a>
@@ -78,25 +78,22 @@
 
   <!-- client section -->
   <div class="containere">
-    <h1>Formulaire de contact</h1>
-    <form action="envoie-d'email.php" method="post">
-      <label for="fname">Nom & prénom</label>
-      <input type="text" id="fname" name="nom" placeholder="Votre nom et prénom">
+    <h1>Contactez-nous</h1>
+    <form action="envoie-d-email.php" method="post">
+        <label for="fname">Nom & prénom</label>
+        <input type="text" id="fname" name="nom" placeholder="Votre nom et prénom">
 
-      <label for="sujet">Sujet</label>
-    <input type="text" id="sujet" name="sujet" placeholder="L'objet de votre message">
+        <label for="sujet">Sujet</label>
+        <input type="text" id="sujet" name="sujet" placeholder="L'objet de votre message">
 
-    <label for="emailAddress">Email</label>
-    <input id="emailAddress" type="email" name="email" placeholder="Votre email">
+        <label for="emailAddress">Email</label>
+        <input id="emailAddress" type="email" name="email" placeholder="Votre email">
 
+        <label for="subject">Message</label>
+        <textarea id="subject" name="message" placeholder="Votre message" style="height:200px"></textarea>
 
-    <label for="subject">Message</label>
-    <textarea id="subject" name="message" placeholder="Votre message" style="height:200px"></textarea>
-
-    <input type="submit" value="Envoyer">
-    <button class="cancel_bro"><a href="index.html">annulé</a></button>
-      
-      
+        <button class="good_btn" type="submit">Envoyer</button>
+        <button class="cancel_btn"><a href="index.html">Annuler</a></button>
     </form>
   </div>
 

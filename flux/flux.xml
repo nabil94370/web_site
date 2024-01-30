@@ -1,0 +1,19 @@
+<?xml version="2.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Votre Titre de Flux RSS</title>
+    <link>file:///C:/MAMP/htdocs/flux/flux.xml</link>
+    <description>Une description de votre flux RSS.</description>
+    
+    <!-- Ajoutez le contenu de votre article en utilisant des balises <item> similaires -->
+    <item>
+      <title>Titre de l'article 1</title>
+      <link>file:///C:/MAMP/htdocs/flux/index.html</link>
+      <description>Contenu de l'article 1.</description>
+      <enclosure url="https://www.nouvelles-technologies.net/wp-content/uploads/2023/01/le-code-source-de-league-of-legends-est-en-vente.jpeg" type="image/jpeg" length="8000" />
+    </item>
+    
+    <!-- Ajoutez d'autres articles en utilisant des balises <item> similaires -->
+    
+  </channel>
+</rss>

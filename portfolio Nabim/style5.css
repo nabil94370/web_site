@@ -1,0 +1,68 @@
+body {
+    background-color: #091B2E;
+    width: 98%;
+  }
+  
+  #container {
+    display: flex;
+    align-items: center;
+  }
+  
+  #photo {
+    margin-top: 80px;
+    margin-left: 100px;
+    background-color: black;
+    width: 450px;
+    padding: 50px;
+  }
+  
+  #text-container {
+    margin-left: 150px; /* Ajustez la marge selon vos besoins */
+  }
+  
+  .name {
+    font-size: 50px;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .name .greentext {
+    color: green;
+  }
+  
+  .description {
+    color: white;
+    width: 500px ;
+    font-size: 20px;
+  }
+  
+  .buttons {
+    margin-left: auto;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .button {
+    display: inline-block;
+    border: none;
+    padding: 15px;
+    margin-right: 50px;
+    background: none;
+    cursor: pointer;
+    font-size: 24px;
+    color:white;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, width 0.3s; /* Ajouter une transition pour un effet plus lisse */
+    width: 80%; /* Ajuster la largeur au survol */
+    border-radius: 10px; /* Ajouter des coins arrondis */
+  }
+  
+  .button:hover {
+    background-color: green;
+    width: 80%; /* Ajuster la largeur au survol */
+    border-radius: 10px; /* Ajouter des coins arrondis */
+    padding: 15px;
+  }
+
+  

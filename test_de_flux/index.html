@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Flux RSS de Photos</title>
+    <style>
+        /* Ajoutez un style pour l'effet de transition */
+        .rss-item {
+            opacity: 0; /* L'élément est transparent par défaut */
+            transition: opacity 0.5s ease-in-out; /* Effet de transition de 0.5 seconde */
+        }
+    </style>
+</head>
+<body>
+    <h1>Mon Flux RSS de Photos</h1>
+    <div id="rss-feed"></div>
+
+    <script>
+        let currentIndex = 0; // Suivi de l'index actuel
+
+        function fetchAndDisplay() {
+            fetch('feeder.xml')
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(data, 'application/xml');
+                    const items = xmlDoc.querySelectorAll('item');
+
+                    const rssFeed = document.getElementById('rss-feed');
+                    rssFeed.innerHTML = ''; // Effacer le contenu précédent
+
+                    if (currentIndex < items.length) {
+                        const item = items[currentIndex];
+                        const title = item.querySelector('title').textContent;
+                        const description = item.querySelector('description').textContent;
+                        const enclosure = item.querySelector('enclosure');
+                        const imageURL = enclosure.getAttribute('url');
+                        const mimeType = enclosure.getAttribute('type');
+
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'rss-item'; // Ajouter la classe pour l'effet de transition
+                        itemDiv.innerHTML = `
+                            <h2>${title}</h2>
+                            <p>${description}</p>
+                            <img src="${imageURL}" />
+                        `;
+
+                        rssFeed.appendChild(itemDiv);
+
+                        // Appliquer l'effet de transition pour afficher l'image
+                        setTimeout(() => {
+                            itemDiv.style.opacity = '1';
+                        }, 100); // Délai de 100 millisecondes pour déclencher la transition
+
+                        currentIndex++; // Passer à l'élément suivant
+                    } else {
+                        // Revenir au premier élément lorsque tous les éléments ont été affichés
+                        currentIndex = 0;
+                    }
+                })
+                .catch(error => console.error('Erreur lors du chargement du flux RSS', error));
+        }
+
+        // Appel initial pour afficher la première image
+        fetchAndDisplay();
+
+        // Actualiser toutes les 30 secondes
+        setInterval(fetchAndDisplay, 30000);
+    </script>
+</body>
+</html>

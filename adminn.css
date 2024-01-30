@@ -1,0 +1,95 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f7f7f7;
+}
+
+.containere {
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 700px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+h1 {
+    color: #1255a2;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+input[type="submit"],
+.cancel_btn {
+    background-color: #1255a2;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover,
+.cancel_btn:hover {
+    background-color: #1872d9;
+    transform: scale(1.05);
+}
+
+.cancel_btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.cancel_btn {
+    background-color: black;
+    color: blue;
+}
+.good_btn {
+    background-color: #1255a2;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.good_btn:hover {
+    background-color: #1872d9;
+    transform: scale(1.05);
+}
+.good_btn a {
+    text-decoration: none;
+    color: white;
+}
+.good_btn{
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/041dd9930e.js" crossorigin="anonymous"></script>
+    <title>Coran Lecteur</title>
+    <link href="home.css" rel="stylesheet">
+    <link rel="shortcut icon" href="unnamed.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        #menu-demo2, #menu-demo2 ul{
+padding:0;
+margin:0;
+list-style:none;
+text-align:center;
+}
+#menu-demo2 li{
+display:inline-block;
+position:relative;
+border-radius:8px 8px 0 0;
+}
+#menu-demo2 ul li{
+display:inherit;
+border-radius:0;
+}
+#menu-demo2 ul li:hover{
+border-radius:0;
+}
+#menu-demo2 ul li:last-child{
+border-radius:0 0 8px 8px;
+}
+#menu-demo2 ul{
+position:absolute;
+z-index: 1000;
+max-height:0;
+left: 0;
+right: 0;
+overflow:hidden;
+-moz-transition: .8s all .3s;
+-webkit-transition: .8s all .3s;
+transition: .8s all .3s;
+color: black;
+}
+#menu-demo2 li:hover ul{
+max-height: 1500px;
+width: 400px;
+}
+/* background des liens menus */
+#menu-demo2 li:first-child{
+    background: linear-gradient(to top, pink, white);
+}
+#menu-demo2 li:nth-child(2){
+    background: linear-gradient(to top, pink, white);
+}
+#menu-demo2 li:nth-child(3){
+    background: linear-gradient(to top, pink, white);
+}
+#menu-demo2 li:last-child{
+background: linear-gradient(to top, pink, white);
+background: linear-gradient(to top, pink, white);
+background: linear-gradient(to top, pink, white);
+}
+/* background des liens sous menus */
+#menu-demo2 li:first-child li{
+    background: linear-gradient(to top, pink, white);
+}
+#menu-demo2 li:nth-child(2) li{
+    background: linear-gradient(to top, pink, white);
+}
+#menu-demo2 li:nth-child(3) li{
+    background: linear-gradient(to top, pink, white);
+}
+#menu-demo2 li:last-child li{
+    background: linear-gradient(to top, pink, white);
+}
+/* background des liens menus et sous menus au survol */
+#menu-demo2 li:first-child:hover, #menu-demo2 li:first-child li:hover{
+    background: linear-gradient(to top, pink, white);
+}
+#menu-demo2 li:nth-child(2):hover, #menu-demo2 li:nth-child(2) li:hover{
+    background: linear-gradient(to top, pink, white);
+}
+#menu-demo2 li:nth-child(3):hover, #menu-demo2 li:nth-child(3) li:hover{
+    background: linear-gradient(to top, pink, white);
+}
+#menu-demo2 li:last-child:hover, #menu-demo2 li:last-child li:hover{
+    background: linear-gradient(to top, pink, white);
+}
+/* les a href */
+#menu-demo2 a{
+text-decoration:none;
+display:block;
+padding:8px 32px;
+color:#fff;
+font-family:arial;
+}
+#menu-demo2 ul a{
+padding:8px 0;
+}
+#menu-demo2 li:hover li a{
+color:#fff;
+text-transform:inherit;
+}
+#menu-demo2 li:hover a, #menu-demo2 li li:hover a{
+color:#000;
+}
+#menufdr{
+    width: 400px;
+    color: black;
+}
+#taajweedd{
+    display: flex;
+}
+#ikhfaButton{
+    width: 400px;
+}
+#izharButton{
+    width: 400px;
+}
+#iqlabButton
+{
+    width: 400px;
+}
+#IdghamShafawiButton{
+    width: 400px;
+}
+#IzharShafawiButton{
+    width: 400px;
+}
+#IkhfaShafawiButton{
+    width: 400px;
+}
+#kalkalaButton{
+    width: 400px;
+}
+#idghamGhounaButton{
+    width: 400px;
+}
+#idghamNoGhounaButton{
+    width: 400px;
+}
+#MENUMDRRR{
+    width: 400px;
+}
+    </style>
+</head>
+
+
+
+<body>
+    <header>
+        <h1 class="h1_principal">STUDIO CORAN</h1>
+    </header>
+    <main class="container container_main">
+
+            <div class="row">
+                <div class="col-xxl-4 col-sm-12 col-12">
+                    <div id="content1">
+                        <div class="div_title">
+                            <h3 class="title_h2">
+                                <span>القرآن الكريم</span>
+                                <span>Quran</span>            
+                            </h3>
+                        </div>
+                        <input type="number" id="pageNumberInput" min="1" max="604" placeholder="Entrez un numéro de page" />
+                        <button onclick="LoadPage1()"><span>تحميل الصفحة</span><span> Charger la page</span></button>
+                        <div id="BAbutton">
+                            <button onclick="LoadPageAfter()">Après</button>
+                            <button onclick="LoadPageBefore()">Avant</button>
+                        </div>
+                        <div id="quranContent">
+                            <!-- Le contenu du Coran sera injecté ici -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-4 col-sm-12 col-12">
+                    <div id="sidebar">
+                        <div class="div_title">
+                            <h3 class="title_h2">
+                                <span>التجويد</span>
+                                <span>Tajweed</span>  
+                            </h3>
+                        </div>
+                        
+                            <input type="text" id="searchInput" placeholder="Entrez le mot à rechercher">
+                            <button onclick="search()">Rechercher / البحث</button>
+                            
+                            
+                            
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-sm-12 col-12">
+                    <div id="extra">
+                        <div class="div_title">
+                                <h3 class="title_h2">
+                                    <span id="arabicOccurrences">نتائج<span id="arabicCount"></span></span>
+                                    <span id="frenchOccurrences">Résultats <span id="frenchCount"></span></span> 
+                                </h3>
+                        </div>
+                        <div id="tajweedContent">
+                            <!-- Le contenu de tajweed sera injecté ici -->
+                        </div>
+                    </div>
+                </div>
+                
+                <ul id="menu-demo2">
+                    <li><a href="#" id="menufdr">noun  ن</a>
+                        <ul>
+                            
+                                <li><button id="kalkalaButton">
+                                    <span>القلقلة</span>
+                                    <span>Al qalqalah</span>
+                                 </button>
+                                                        
+                                <button id="ikhfaButton" style="margin-top: 20px;">
+                                    <span>إخفاء</span>
+                                    <span>Ikhfa</span>
+                                </button>
+                                
+                                    <button id="idghamGhounaButton" >
+                                        <span>الادغام بغنة</span>
+                                        <span>Idgham avec ghouna</span>
+                                    </button>
+                                    <button id="idghamNoGhounaButton" >
+                                        <span>الإدغام بغير غنة</span>
+                                        <span>Idgham sans ghouna</span>
+                                    </button>        
+                                    <button id="izharButton" >
+                                        <span>إظهار</span>
+                                        <span>Izhar</span>
+                                    </button>
+                                    <button id="iqlabButton">
+                                        <span>الاقلب</span> 
+                                        <span>Iqlab</span>                      
+                                    </button>        
+                                    
+                                    </li>
+                                    
+                            
+                                    
+                            
+                        </ul>
+                    </li>
+                    <li id="MENUMDRRR"><a href="#">mim  م</a>
+                        <ul>
+                            <li><button id="IdghamShafawiButton" style="margin-top: 20px;">
+                                <span>إِدْغام شَفَوِيّ</span>
+                                <span>Idgham shafawi</span>
+                            </button>        
+                            <button id="IzharShafawiButton">
+                                <span>إِظْهار شَفَوِيّ</span>
+                                <span>Izhar shafawi</span>
+                            </button>
+                            <button id="IkhfaShafawiButton">
+                                <span>إِخْفاء شَفَوِيّ</span>
+                                <span>Ikhfa shafawi</span>
+                            </button></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+                
+            
+                
+            </div>
+    </main>
+    <script>
+        function showButtons(type) {
+          const nounButtons = document.getElementById('noun-buttons');
+          const mimButtons = document.getElementById('mim-buttons');
+    
+          if (type === 'noun') {
+            nounButtons.classList.remove('hidden');
+            mimButtons.classList.add('hidden');
+          } else if (type === 'mim') {
+            mimButtons.classList.remove('hidden');
+            nounButtons.classList.add('hidden');
+          }
+        }
+      </script>
+    <div class="arrow">
+        <i class="fa-solid fa-angles-up fa-2xl"></i>
+    </div>
+    <div class="arrow2">
+        <i class="fa-solid fa-angles-down fa-2xl"></i>
+    </div>
+
+    <footer>
+        <div id="div_footer">
+            <div id="part1_footer">
+                <h2>Nous contacter :</h2>
+                <a href="https://www.instagram.com/studi.coran/" target="_blank" title="discord"><i class="fa-brands fa-instagram fa-2xl" id="i1foot"></i></a>
+                <a href="https://www.tiktok.com/@studio_coran" target="_blank" title="twitter"><i class="fa-brands fa-tiktok fa-2xl" id="i2foot"></i></a>
+            </div>
+            <div id="part2_footer">
+                <h2>Site Web créé par :</h2>
+                <ul>
+                    <li>ABBES Brahim</li>
+                    <li>ABBES Amine</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>-->
+</body>
+
+</html>
