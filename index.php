@@ -92,7 +92,7 @@ ini_set('display_errors', 1);
     <!-- slider section -->
     <section class="slider_section ">
       <div class="slider_bg_box">
-        <img src="images/slider-bg.jpg" alt="">
+        <img src="images/porte-fond.jpg" alt="">
       </div>
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -207,7 +207,7 @@ ini_set('display_errors', 1);
                     <div class="col-md-8 px-0">
                       <p>
                       Isolation phonique intégrée, matériaux absorbant le son, idéale pour la confidentialité.
-                      </p>
+                    </p>
                     </div>
                     <div class="btn-box">
                       <a href="" class="btn1">

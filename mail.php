@@ -79,7 +79,7 @@
   <!-- client section -->
   <div class="containere">
     <h1>Contactez-nous</h1>
-    <form action="envoie-d-email.php" method="post">
+    <form action="envoie-d'email.php" method="post">
         <label for="fname">Nom & prénom</label>
         <input type="text" id="fname" name="nom" placeholder="Votre nom et prénom">
 
