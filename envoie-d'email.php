@@ -21,8 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Content-Type: text/plain; charset=\"utf-8\"\r\n";
     $headers .= "Content-Transfer-Encoding: 8bit\r\n";
 
-    // Envoyer l'e-mail
-    try {
+	try {
 		if (mail($destinataire, $sujet, $contenu, $headers)) {
 			header('Location: index.php');
 		} else {

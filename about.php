@@ -14,7 +14,7 @@
 
   <title>Nabil</title>
 
-    <link rel="stylesheet" href="admin.css">n
+
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
@@ -39,7 +39,7 @@
 
 <body class="sub_page">
 
-  <div class="hero_area">
+  <div class="hero_area ">
     <!-- header section strats -->
     <header class="header_section">
       <div class="container-fluid">
@@ -57,9 +57,9 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ">
               <li class="nav-item ">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" href="about.html"> À propos</a>
               </li>
               <li class="nav-item">
@@ -68,11 +68,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="why.html">Pourquoi nous</a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="testimonial.html">Témoignage</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="mail.php">Contact</a>
+                <a class="nav-link" href="mail.php"> Contact</a>
               </li>
               <form class="form-inline">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
@@ -87,37 +87,18 @@
     <!-- end header section -->
   </div>
 
-  <!-- client section -->
+  <!-- about section -->
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav  ">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html"> À propos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="property.html">Propriété</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="why.html">Pourquoi nous</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="testimonial.html">Témoignage</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="mail.php">Contact</a>
-      </li>
-      <form class="form-inline">
-        <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-      </form>
-    </ul>
+   <?php
+    require('nav-about.php')
+   ?>
 
-  <!-- end client section -->
-
+  <!-- end about section -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <!-- info section -->
   <section class="info_section ">
 
@@ -126,7 +107,7 @@
         <a href="">
           <i class="fa fa-phone" aria-hidden="true"></i>
           <span>
-            Call : +33 06 37 43 53 91
+            Call : +33 06 37 43 56 91
           </span>
         </a>
         <a href="mail.php">
@@ -135,7 +116,7 @@
             Email : nblabbes@gmail.com
           </span>
         </a>
-        <a href="https://www.google.com/maps/place/Mairie+de+Sucy-en-Brie/@48.7708729,2.5237451,15z/data=!4m6!3m5!1s0x47e60bf65ba9a17d:0xd3eb0fad016c8fe4!8m2!3d48.7708729!4d2.5237451!16s%2Fg%2F1td4tl2b">
+        <a href="https://www.google.com/maps/place/Mairie+de+Sucy-en-Brie/@48.7708729,2.5237451,15z/data=!4m2!3m1!1s0x0:0xd3eb0fad016c8fe4?sa=X&ved=2ahUKEwikrcHx2pX-AhXhVaQEHbnNCSsQ_BJ6BAhvEAg">
           <i class="fa fa-map-marker" aria-hidden="true"></i>
           <span>
             Location
@@ -148,7 +129,7 @@
           <div class=" col-md-4 col-lg-4 ">
             <div class="info_about">
               <h4>
-                À PROPOS DE NOUS
+                À propos de nous
               </h4>
               <p>
                 À SHF, nous redéfinissons la sécurité avec des portes blindées innovantes, alliant protection et esthétique sur mesure. Découvrez la tranquillité d'esprit à chaque ouverture.
@@ -158,14 +139,15 @@
           <div class=" col-md-4 col-lg-3 mx-auto">
             <div class="info_links">
               <h4>
-                LIENS RAPIDES
+                Lien rapide
               </h4>
               <div class="info_links_menu">
-                <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
                 <a class="" href="about.html"> À propos</a>
                 <a class="" href="property.html">Propriété</a>
                 <a class="" href="why.html">Pourquoi nous</a>
                 <a class="" href="testimonial.html">Témoignage</a>
+                <a class="" href="mail.php">Contact</a>
               </div>
             </div>
           </div>
@@ -196,7 +178,7 @@
 
 
   <!-- footer section -->
-
+  
   <!-- footer section -->
 
   <!-- jQery -->

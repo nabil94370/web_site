@@ -2,17 +2,18 @@
 // Démarre la session PHP
 session_start();
 
-// Connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "stage_2024_djellal";
+$servername = "mysql-sokuu94.alwaysdata.net";
+$username = "sokuu94_nabil";
+$password = "Jesaispas94";
+$dbname = "sokuu94_connexion";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-// Vérifier la connexion
-if ($conn->connect_error) {
-    die("La connexion a échoué : " . $conn->connect_error);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 $success_message = ""; // Initialisez la variable du message de succès

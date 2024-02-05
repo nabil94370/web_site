@@ -110,12 +110,7 @@ ini_set('display_errors', 1);
                       Acier renforcé, serrures multipoints, design personnalisable.
                       </p>
                     </div>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact nous
-                      </a>
                     
-                    </div>
                   </div>
                 </div>
               </div>
@@ -135,12 +130,7 @@ ini_set('display_errors', 1);
                       Blindage renforcé, serrures avancées, conçue pour une sécurité maximale.
                       </p>
                     </div>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact nous
-                      </a>
-                      
-                    </div>
+                   
                   </div>
                 </div>
               </div>
@@ -160,12 +150,7 @@ ini_set('display_errors', 1);
                       Matériaux ignifuges, système d'étanchéité, idéale pour prévenir la propagation du feu.
                       </p>
                     </div>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact nous
-                      </a>
-                      
-                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -185,11 +170,7 @@ ini_set('display_errors', 1);
                       Acier épais, serrures haute sécurité, idéale pour la protection de biens précieux.
                       </p>
                     </div>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact nous                      </a>
-                      
-                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -209,12 +190,7 @@ ini_set('display_errors', 1);
                       Isolation phonique intégrée, matériaux absorbant le son, idéale pour la confidentialité.
                     </p>
                     </div>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact nous
-                      </a>
-                     
-                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -242,33 +218,9 @@ ini_set('display_errors', 1);
 
   <!-- about section -->
 
-  <section class="about_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                About Us
-              </h2>
-            </div>
-            <p>
-            À SHF, nous redéfinissons la sécurité avec des portes blindées innovantes, alliant protection et esthétique sur mesure. Découvrez la tranquillité d'esprit à chaque ouverture.
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-        <div class="col-md-6 ">
-          <div class="">
-            <img src="images (1).png" alt="">
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <?php
+  require('nav-about.php')
+  ?>
 
   <!-- end about section -->
 
@@ -395,11 +347,7 @@ ini_set('display_errors', 1);
           </div>
         </div>
       </div>
-      <div class="btn-box">
-        <a href="">
-          Trouve plus
-        </a>
-      </div>
+      
     </div>
   </section>
 
@@ -461,11 +409,7 @@ ini_set('display_errors', 1);
           </div>
         </div>
       </div>
-      <div class="btn-box">
-        <a href="">
-          En savoir plus
-        </a>
-      </div>
+      
     </div>
   </section>
 
@@ -512,7 +456,7 @@ ini_set('display_errors', 1);
                 À PROPOS DE NOUS              
               </h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, vitae. Dolorem incidunt consectetur, recusandae enim officiis mollitia modi consequatur ab non animi provident quis asperiores eius omnis suscipit maiores perferendis?
+              À SHF, nous redéfinissons la sécurité avec des portes blindées innovantes, alliant protection et esthétique sur mesure. Découvrez la tranquillité d'esprit à chaque ouverture.
               </p>
             </div>
           </div>
@@ -522,11 +466,12 @@ ini_set('display_errors', 1);
                 LIENS RAPIDES
               </h4>
               <div class="info_links_menu">
-                <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
                 <a class="" href="about.html"> À propos</a>
-                <a class="" href="property.html">À propos</a>
+                <a class="" href="property.html">Propriété</a>
                 <a class="" href="why.html">Pourquoi nous</a>
                 <a class="" href="testimonial.html">Témoignage</a>
+                <a class="" href="mail.php">Contact</a>
               </div>
             </div>
           </div>
