@@ -11,19 +11,20 @@ $res = mysqli_query($conn, $selSql);
 $r = mysqli_fetch_assoc($res);
 
 if (isset($_POST) & !empty($_POST)) {
-    $nom = ($_POST['nom']);
-    $prenom = ($_POST['prenom']);
-    $date = ($_POST['dates']);
-    $gender = $_POST['gender'];
-    $types = $_POST['types'];
-    $photo_string = $_FILES['photo']['name'];
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $date = $_POST['dates'];
+    $date_unpose = isset($_POST['dates_de_pose']) ? $_POST['dates_de_pose'] : '';
+    $porte_numero = isset($_POST['numero']) ? $_POST['numero'] : '';
+    $agences = isset($_POST['agence']) ? $_POST['agence'] : '';
+    $etage = $_POST['etage'];
+    $photo = $_FILES['photo']['name'];
 
     $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/'; 
     $target_file = $target_dir . basename($_FILES["photo"]["name"]);
     move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
-
-    $UpdateSql = "UPDATE `etudiant` SET first_name='$nom',	last_name='$prenom', dates='$date', gender='$gender', types='$types', photo='$photo_string'  WHERE id=$id ";
-
+	
+	$UpdateSql = "UPDATE `etudiant` SET first_name='$nom', last_name='$prenom', dates='$date', dates_unpose='$date_unpose', porte_numero='$porte_numero', Etage='$etage', agences='$agences', photo='$photo' WHERE id=$id";
     $res = mysqli_query($conn, $UpdateSql);
     if ($res) {
         header("location: view.php");
@@ -48,86 +49,88 @@ if (isset($_POST) & !empty($_POST)) {
 		include 'navbar.php';
 	 ?>
 
-	<div class="container">
-		<div class="row pt-4">
-				<?php if (isset($erreur)) { ?>
-				<div class="alert alert-danger" role="alert">
-					<?php echo $erreur; ?>
-				</div> <?php } ?>
+<div class="container">
+        <div class="row pt-4">
+            <form action="" method="POST" enctype="multipart/form-data" id="donnation" class="form-horizontal col-md-6 pt-4 fade-in">
+                <h2>Insérer vos données</h2>
 
-			<form action="" method="POST" class="form-horizontal col-md-6 pt-4" enctype="multipart/form-data">
-				<h2>Données Clients</h2>
+                <div class="form-group">
+                    <label for="input1" class="col-sm-2 control-label">Nom</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="nom" placeholder="Nom" class="form-control" id="input1">
+                    </div>
+                </div>
 
-				<div class="form-group">
-					<label for="input1" class="col-sm-2 control-label">Nom</label>
-					<div class="col-sm-10">
-						<input type="text" name="nom" placeholder="Nom"
-						class="form-control" id="input1"
-						value="<?php echo $r['first_name'] ?>">
-					</div>
-				</div>
+                <div class="form-group">
+                    <label for="input1" class="col-sm-2 control-label">Prenom</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="prenom" placeholder="prenom" class="form-control" id="input1">
+                    </div>
+                </div>
 
-				<div class="form-group">
-					<label for="input1" class="col-sm-2 control-label">Prénom</label>
-					<div class="col-sm-10">
-						<input type="text" name="prenom" placeholder="prenom" class="form-control" id="input1"
-						value="<?php echo $r['last_name'] ?>">
-					</div>
-				</div>
+                <div class="form-group">
+                    <label for="input1" class="col-sm-2 control-label">Date De Pose</label>
+                    <div class="col-sm-10">
+                        <input type="date" name="dates" placeholder="Date De Pose" class="form-control" id="input1">
+                    </div>
+                </div>
 
-				<div class="form-group">
-					<label for="input1" class="col-sm-2 control-label">Date</label>
-					<div class="col-sm-10">
-						<input type="date" name="dates" placeholder="e-mail" class="form-control" id="input1"
-						value="<?php echo $r['dates'] ?>">
-					</div>
-				</div>
+                <div class="form-group">
+                    <label for="input1" class="col-sm-2 control-label">Date De Dépose</label>
+                    <div class="col-sm-10">
+                        <input type="date" name="dates_de_pose" placeholder="Date De Dépose" class="form-control" id="input1">
+                    </div>
+                </div>
 
-				<div class="form-group">
-					<label for="input1" class="col-sm-2 control-label">Genre</label>
-					<div class="col-sm-10">
-						<label>
-							<input type="radio" name="gender" id="optionsRadios"
-							value="h" <?php if($r['gender'] == 'h'){ echo "checked";} ?>>
-							H
-						</label>
-						<label>
-							<input type="radio" name="gender" id="optionsRadios" value="f" <?php if($r['gender'] == 'f'){ echo "checked";} ?>>
-							F
-						</label>
+                <div class="form-group">
+                    <label for="input1" class="col-sm-2 control-label">Numéro De Porte</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="numero" placeholder="Numéro De Porte" class="form-control" id="input1">
+                    </div>
+                </div>
 
-					</div>
-				</div>
+                <div class="form-group">
+                    <label for="input1" class="col-sm-2 control-label">Etage</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="etage" placeholder="Numéro De Porte" class="form-control" id="input1">
+                    </div>
+                </div>
 
-				<div class="form-group">
-					<label for="input1" class="col-sm-2 control-label">types</label>
-					<div class="col-sm-10">
-						<select name="types" class="form-control">
-							<option>types de porte</option>
-							<option value="porte" <?php if($r['types'] == 'porte'){ echo "selected";} ?>>porte</option>
-						</select>
-					</div>
-				</div>
+                <div class="form-group">
+                    <label for="input1" class="col-sm-2 control-label">Agence</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="agence" placeholder="agence" class="form-control" id="input1">
+                    </div>
+                </div>
 
-				<div class="form-group">
-					<label for="input1" class="col-sm-2 control-label">Photo</label>
-				<div class="col-sm-10">
-            <input type="file" name="photo" class="form-control" id="photos">
-        	</div>
-    	</div>
+                <div class="form-group">
+                    <label for="input1" class="col-sm-2 control-label">Photo</label>
+                    <div class="col-sm-10">
+                        <input type="file" name="photo" class="form-control" id="photos">
+                    </div>
+                </div>
+
+                
+
+                <div class="pt-4">
+                    <input type="submit" value="Save & Submit" class="btn btn-primary m-3">
+                    <a href="view.php">
+                        <button class="btn btn-success m-3" type="button">Données Clients</button>
+                    </a>
+                </div>
+                <?php if (isset($message)) { ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $message; ?>
+                    </div>
+                <?php } ?>
+            </form>
+
+            
+        </div>
+    </div>
     <!-- Autres champs du formulaire ici -->
 
-				<div class="pt-4">
-			<input type="submit" value="Save & Submit" class="btn btn-primary m-3">
-			<a href="view.php">
-            <button class="btn btn-success m-3" type="button">
-				Données Clients
-            </button>
-        	</a>
-    </div>
-			</form>
-		</div>
-	</div>
+				
 
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>

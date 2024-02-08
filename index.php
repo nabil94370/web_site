@@ -62,7 +62,7 @@ ini_set('display_errors', 1);
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> À propos</a>
+                <a class="nav-link" href="about.php"> À propos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="property.html">Propriété</a>
@@ -294,7 +294,7 @@ ini_set('display_errors', 1);
         <div class="col-sm-6 col-md-4">
           <div class="box">
             <div class="img-box">
-              <img src="images (1).png" alt="">
+              <img src="./images/prote-fort.jpg" alt="" height="401px">
             </div>
             <div class="detail-box">
               <h6>

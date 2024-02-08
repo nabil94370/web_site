@@ -160,67 +160,123 @@ $conn->close();
     </div>
     
     <script>
-        var totalPrice = 0;
+    var totalPrice = 0;
 
-        function allowDrop(event) {
-            event.preventDefault();
+    function allowDrop(event) {
+        event.preventDefault();
+        var rackComponents = document.querySelectorAll('.rack-component');
+        var isOnRackComponent = false;
+
+        rackComponents.forEach(function(rackComponent) {
+            var componentRect = rackComponent.getBoundingClientRect();
+            var x = event.clientX;
+            var y = event.clientY;
+
+            if (
+                x >= componentRect.left &&
+                x <= componentRect.right &&
+                y >= componentRect.top &&
+                y <= componentRect.bottom
+            ) {
+                isOnRackComponent = true;
+            }
+        });
+
+        if (!isOnRackComponent) {
+            event.dataTransfer.dropEffect = "none"; // Désactiver le drop en dehors des rack-components
         }
+    }
 
-        function drop(event) {
-            event.preventDefault();
-            var data = event.dataTransfer.getData("text");
+    function drop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
 
-            var componentPrice = parseFloat(data.split('prix=')[1]);
-            totalPrice += componentPrice;
+        var componentPrice = parseFloat(data.split('prix=')[1]);
+        totalPrice += componentPrice;
+        updateTotalPrice();
+
+        var rackContainer = document.getElementById("rack-container");
+
+        var componentDiv = document.createElement('div');
+        componentDiv.classList.add('rack-component');
+
+        // Créer une image à partir de zéro
+        var draggedImage = new Image();
+        draggedImage.src = data;
+
+        var clonedImage = new Image();
+        clonedImage.src = draggedImage.src;
+        clonedImage.style.cursor = 'default';
+        clonedImage.classList.add('component-image');
+
+        // Fixer la taille de l'image pour correspondre à celle du rack-component
+        clonedImage.style.width = "100%";
+        clonedImage.style.height = "100%";
+
+        var deleteButton = document.createElement('button');
+        deleteButton.innerHTML = 'X';
+        deleteButton.onclick = function() {
+            rackContainer.removeChild(componentDiv);
+
+            totalPrice -= componentPrice;
             updateTotalPrice();
+        };
 
-            var draggedImage = new Image();
-            draggedImage.src = data;
+        componentDiv.appendChild(clonedImage);
+        componentDiv.appendChild(deleteButton);
 
-            draggedImage.onload = function() {
-                var rackContainer = document.getElementById("rack-container");
+        // Obtenir la position du drop
+        var rect = rackContainer.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        var y = event.clientY - rect.top;
 
-                var componentDiv = document.createElement('div');
-                componentDiv.classList.add('rack-component');
+        // Trouver le rack-component dans lequel l'image doit être déposée
+        var rackComponents = document.querySelectorAll('.rack-component');
+        var targetComponent = null;
 
-                var clonedImage = draggedImage.cloneNode(true);
-                clonedImage.style.cursor = 'default';
-                clonedImage.removeAttribute('draggable');
-                clonedImage.classList.add('component-image');
+        rackComponents.forEach(function(rackComponent) {
+            var componentRect = rackComponent.getBoundingClientRect();
+            if (
+                x >= componentRect.left &&
+                x <= componentRect.right &&
+                y >= componentRect.top &&
+                y <= componentRect.bottom
+            ) {
+                targetComponent = rackComponent;
+            }
+        });
 
-                var deleteButton = document.createElement('button');
-                deleteButton.innerHTML = 'X';
-                deleteButton.onclick = function() {
-                    rackContainer.removeChild(componentDiv);
+        // Si un rack-component a été trouvé, positionner l'image dans celui-ci
+        if (targetComponent) {
+            // Fixer la position de l'image au coin supérieur gauche du rack-component
+            componentDiv.style.left = targetComponent.offsetLeft + 'px';
+            componentDiv.style.top = targetComponent.offsetTop + 'px';
 
-                    totalPrice -= componentPrice;
-                    updateTotalPrice();
-                };
-
-                componentDiv.appendChild(clonedImage);
-                componentDiv.appendChild(deleteButton);
-
-                rackContainer.appendChild(componentDiv);
-            };
+            targetComponent.appendChild(componentDiv);
+        } else {
+            // Sinon, positionner l'image au centre du rack-container
+            componentDiv.style.left = x - componentDiv.offsetWidth / 2 + 'px';
+            componentDiv.style.top = y - componentDiv.offsetHeight / 2 + 'px';
+            rackContainer.appendChild(componentDiv);
         }
-        
+    }
 
-        function clearImages() {
-            var imageContainer = document.getElementById("image-container");
-            imageContainer.innerHTML = '';
+    function clearImages() {
+        var rackContainer = document.getElementById("rack-container");
+        rackContainer.innerHTML = '';
 
-            totalPrice = 0;
-            updateTotalPrice();
-        }
+        totalPrice = 0;
+        updateTotalPrice();
+    }
 
-        function updateTotalPrice() {
-            var totalElement = document.getElementById("total-price");
-            totalElement.innerHTML = "Prix total: " + totalPrice.toFixed(2);
-        }
+    function updateTotalPrice() {
+        var totalElement = document.getElementById("total-price");
+        totalElement.innerHTML = "Prix total: " + totalPrice.toFixed(2);
+    }
 
-        function drag(event) {
-            event.dataTransfer.setData("text", event.target.src);
-        }
-    </script>
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.src);
+    }
+</script>
 </body>
 </html>

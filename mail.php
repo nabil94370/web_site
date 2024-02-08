@@ -49,7 +49,7 @@
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"> À propos</a>
+                <a class="nav-link" href="about.php"> À propos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="property.html">Propriété</a>

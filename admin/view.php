@@ -50,6 +50,7 @@
 					<th>Agence</th>
 					<th>Etage</th>
 					<th>Actions</th>
+					<th>photo</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -61,6 +62,7 @@
                     $porte_numero = $r['porte_numero'];
                     $agence = $r['agences'];
                     $etage = $r['Etage'];
+					$photo = $r['photo'];
                 ?>
 				<tr>
 					<th scope="row"><?php echo $id; ?></th>
@@ -70,6 +72,7 @@
                     <td><?php echo $porte_numero; ?></td>
                     <td><?php echo $agence; ?></td>
                     <td><?php echo $etage; ?></td>
+					<td><img src="/uploads/<?php echo $photo; ?>" alt="Photo de l'étudiant" width="150px" height="150px"></td>
 					
 					
 					

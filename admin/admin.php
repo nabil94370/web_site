@@ -25,10 +25,14 @@ if (!empty($_POST)) {
     $porte_numero = isset($_POST['numero']) ? $_POST['numero'] : '';
     $agences = isset($_POST['agence']) ? $_POST['agence'] : '';
     $etage = $_POST['etage'];
+    $photo = $_FILES['photo']['name'];
 
+    $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/'; 
+    $target_file = $target_dir . basename($_FILES["photo"]["name"]);
+    move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file);
     
 
-    $CreateSql = "INSERT INTO `etudiant` (first_name, last_name, dates, dates_unpose, porte_numero, etage, agences) VALUES ('$nom', '$prenom', '$date', '$date_unpose', '$porte_numero', $etage, '$agences')";
+    $CreateSql = "INSERT INTO `etudiant` (first_name, last_name, dates, dates_unpose, porte_numero, Etage, agences, photo) VALUES ('$nom', '$prenom', '$date', '$date_unpose', '$porte_numero', '$etage', '$agences', '$photo')";
     $res = mysqli_query($conn, $CreateSql) or die(mysqli_error($conn));
 
     if ($res) {
@@ -101,6 +105,13 @@ if (!empty($_POST)) {
                     <label for="input1" class="col-sm-2 control-label">Agence</label>
                     <div class="col-sm-10">
                         <input type="text" name="agence" placeholder="agence" class="form-control" id="input1">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="input1" class="col-sm-2 control-label">Photo</label>
+                    <div class="col-sm-10">
+                        <input type="file" name="photo" class="form-control" id="photos">
                     </div>
                 </div>
 
